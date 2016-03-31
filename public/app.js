@@ -1,10 +1,10 @@
-// var myArr = [];
-// for(i = 0; i < 15; i++){
-//       var num = Math.floor(Math.random() * 100) + 1;
-//       myArr.push(num);
-//     }
+var myArr = [];
+for(i = 0; i < 15; i++){
+      var num = Math.floor(Math.random() * 100) + 1;
+      myArr.push(num);
+    }
 
-myArr = [5, 3, 6];
+
 
 
 function quickSort(arr) {
