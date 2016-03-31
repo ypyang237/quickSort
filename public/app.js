@@ -1,8 +1,11 @@
-var myArr = [];
-for(i = 0; i < 15; i++){
-      var num = Math.floor(Math.random() * 100) + 1;
-      myArr.push(num);
-    }
+// var myArr = [];
+// for(i = 0; i < 15; i++){
+//       var num = Math.floor(Math.random() * 100) + 1;
+//       myArr.push(num);
+//     }
+
+myArr = [5, 3, 6];
+
 
 function quickSort(arr) {
   var pivot = arr[0];
@@ -34,11 +37,13 @@ function quickSort(arr) {
 
     console.log('result', (left.concat(piv,right)));
 
-    return (left.concat(piv,right));
 
-
+    arr = (left.concat(piv,right));
+    return arr;
 
 }
 
 quickSort(myArr);
+
+module.exports = quickSort;
 
