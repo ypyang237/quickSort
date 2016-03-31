@@ -8,37 +8,39 @@
 
 var myArr = [3,2,1,6,5,4 ];
 
-var left = [];
-var right = [];
 
 function quickSort(arr) {
   var pivot = arr[0];
+  var left = [];
+  var right = [];
+
 
 //basecase
-  if(left.length === 1) {
-    console.log('small!');
-    return 'finished';
+  if(arr.length === 1) {
+    console.log('STOP..arrayLength is one!');
+    return arr;
   }
 
     for (var i in myArr) {
       if (myArr[i] < pivot) {
         left.push(myArr[i]);
-      } else {
+      } else if (myArr[i] > pivot) {
         right.push(myArr[i]);
       }
     }
 
 
+    console.log('PIVOT is: ', pivot);
+    console.log('left is: ', left);
+    console.log('right is: ',right);
 
-    console.log('pivot is: ', pivot);
-    console.log(left);
-    console.log('left.length is: ', left.length);
-    console.log(right);
 
-    quickSort(left);
+
+    return quickSort(left).concat(pivot + quickSort(right));
+     // arr = (left).concat(right);
+     // return console.log('here', arr);
 
 }
 
-
-
 quickSort(myArr);
+
