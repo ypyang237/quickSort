@@ -1,13 +1,8 @@
-// var myArr = [];
-// for(i = 0; i < 8; i++){
-//       var num = Math.floor(Math.random() * 100) + 1;
-//       myArr.push(num);
-//     }
-// console.log(myArr);
-
-
-var myArr = [3,2,1,6,5,4 ];
-
+var myArr = [];
+for(i = 0; i < 15; i++){
+      var num = Math.floor(Math.random() * 100) + 1;
+      myArr.push(num);
+    }
 
 function quickSort(arr) {
   var pivot = arr[0];
@@ -17,28 +12,31 @@ function quickSort(arr) {
 
 //basecase
   if(arr.length === 1) {
-    console.log('STOP..arrayLength is one!');
     return arr;
   }
 
-    for (var i in myArr) {
-      if (myArr[i] < pivot) {
-        left.push(myArr[i]);
-      } else if (myArr[i] > pivot) {
-        right.push(myArr[i]);
+  var piv = arr.splice(0, 1);
+  console.log('piv', piv);
+    for (var i in arr) {
+      if (arr[i] <= pivot) {
+        left.push(arr[i]);
+      } else if (arr[i] > pivot) {
+        right.push(arr[i]);
       }
     }
 
+    if(left.length > 1 || right.length > 1) {
 
-    console.log('PIVOT is: ', pivot);
-    console.log('left is: ', left);
-    console.log('right is: ',right);
+      left = quickSort(left);
+      right = quickSort(right);
+    }
 
 
+    console.log('result', (left.concat(piv,right)));
 
-    return quickSort(left).concat(pivot + quickSort(right));
-     // arr = (left).concat(right);
-     // return console.log('here', arr);
+    return (left.concat(piv,right));
+
+
 
 }
 
